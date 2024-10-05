@@ -1,0 +1,174 @@
+@font-face {
+  font-family: "Rubik";
+  src: url("./assets/fonts/Rubik/Rubik-Variable-Weight.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("./assets/fonts/Rubik/Rubik-Variable-Weight.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("./assets/fonts/Rubik/Rubik-Variable-Weight.ttf") format("truetype");
+  font-weight: 700;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+input,
+textarea,
+button,
+select {
+  color: inherit;
+}
+
+body {
+  min-height: 100svh;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  font-size: var(--fs-md);
+}
+
+img,
+picture,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  transition: background-color 200ms;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+div,
+p,
+span {
+  line-height: 1.2;
+}
+
+/* TODO is ch relative to fs or to root?s */
+p {
+  max-width: 60ch;
+}
+
+:root {
+  font-family: Rubik, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --fs-sm: 14px;
+  /* --fs-sm-plus: 16px; */
+  --fs-md: 18px;
+  /* --fs-md-plus: 21px; */
+  --fs-lg: 24px;
+  --fs-xl: 32px;
+
+  /* --primary-color: hsl(168 28 36); */
+  --primary-color: hsl(168 50 30);
+  --accent-color: hsl(160 30 50);
+  --secondary-color: hsl(33 29 57);
+  /* --background-color: hsl(66 68 94); */
+  --background-color: hsl(66 40 94);
+  --background-color-400: var(--background-color);
+  --background-color-500: hsl(from var(--background-color) h s calc(l * 0.9));
+  --text-color: hsl(240 80 10);
+  --text-secondary-color: hsl(240 10 40);
+}
+
+h1 {
+  font-size: var(--fs-xl);
+  font-weight: 500;
+}
+
+h2 {
+  font-size: var(--fs-lg);
+  font-weight: 500;
+  margin-bottom: 0.2em;
+}
+
+h3 {
+  font-size: var(--fs-md);
+  font-weight: 500;
+  margin-bottom: 0.2em;
+}
+
+button.icon-button {
+  font-size: 1.75rem;
+  color: var(--text-color);
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  padding: 0.1em;
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & > * {
+    flex: 1;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.height-transition-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--transition-duration, 300ms);
+
+  & > :first-child {
+    overflow: hidden;
+  }
+
+  &[open] {
+    grid-template-rows: 1fr;
+  }
+}
+
+@media (hover: hover) {
+  button:hover {
+    filter: brightness(1.1);
+  }
+}
+
+@media (hover: none) {
+  button:active {
+    filter: brightness(1.1);
+  }
+}
