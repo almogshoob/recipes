@@ -6,7 +6,7 @@ const NoPage = () => {
     <div className="not-found-page">
       <img src={NotFoundImage} />
       <p>לא מצאנו את העמוד שחיפשת</p>
-      <Link to="/recipes/">לעמוד הבית</Link>
+      <Link to="/">לעמוד הבית</Link>
     </div>
   );
 };
