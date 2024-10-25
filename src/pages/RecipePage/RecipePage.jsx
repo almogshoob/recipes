@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { recipes } from "../../assets/data";
 import { ClockIcon, FileIcon, QuantityIcon } from "../../assets/icons";
+import { Fragment } from "react";
 
 const listProps = {
   ingredients: {
@@ -44,17 +45,37 @@ const RecipePage = () => {
           )}
         </div>
         {Object.keys(listProps)
-          .filter((list) => recipe[list].length)
-          .map((list) => (
-            <div key={list} className="recipe-list">
-              <h3>{listProps[list].displayName}</h3>
-              <ul>
-                {recipe[list].map((listItem, i) => (
-                  <li key={i}>{listItem}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          .filter((listKey) => recipe[listKey].length)
+          .map((listKey) => {
+            const list = recipe[listKey];
+            return (
+              <div key={listKey} className="recipe-list">
+                <h3>{listProps[listKey].displayName}</h3>
+                {typeof list[0] == "string" ? (
+                  <ul>
+                    {list.map((listItem, i) => (
+                      <li key={i}>{listItem}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <>
+                    {list.map((subList, i) => {
+                      return (
+                        <Fragment key={i}>
+                          <h4>{subList.group}:</h4>
+                          <ul>
+                            {subList.items.map((listItem, i) => (
+                              <li key={i}>{listItem}</li>
+                            ))}
+                          </ul>
+                        </Fragment>
+                      );
+                    })}
+                  </>
+                )}
+              </div>
+            );
+          })}
       </div>
     </>
   );

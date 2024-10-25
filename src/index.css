@@ -116,7 +116,7 @@ h2 {
 h3 {
   font-size: var(--fs-md);
   font-weight: 500;
-  margin-bottom: 0.2em;
+  margin-bottom: 0.25em;
 }
 
 button.icon-button {

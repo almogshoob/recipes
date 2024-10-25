@@ -2,7 +2,7 @@ import { Fragment, useMemo, useState } from "react";
 import { recipes } from "../../assets/data";
 import { FilterIcon, SearchIcon } from "../../assets/icons";
 import { RecipeCard } from "../../components";
-import { shuffle } from "../../utils/utils";
+import { getTodaySeed, shuffle } from "../../utils/utils";
 
 const MainPage = () => {
   const [searchText, setSearchText] = useState("");
@@ -25,7 +25,7 @@ const MainPage = () => {
       id,
       ...value,
     }));
-    shuffle(list);
+    shuffle(list, getTodaySeed());
     return list;
   }, [recipes]);
 
