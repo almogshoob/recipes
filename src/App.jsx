@@ -1,11 +1,11 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import { recipes } from "./assets/data";
 import { Layout, MainPage, NoPage, RecipePage } from "./pages";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
-    path: "/recipes/",
+    path: "/",
     element: <Layout />,
     children: [
       {
