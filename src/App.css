@@ -218,9 +218,8 @@
     --fs-sm: 16px;
   }
   .recipes-grid {
-    grid-template-columns: 1fr;
     /* TODO maybe 2 columns */
-    /* grid-template-columns: repeat(2, 1fr); */
+    grid-template-columns: 1fr;
   }
 }
 
