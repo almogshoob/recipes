@@ -11,7 +11,7 @@
 }
 
 .content {
-  max-width: 800px;
+  max-width: 1000px;
   min-width: 350px;
   padding: 2rem 2rem;
   margin-inline: auto;
@@ -19,8 +19,7 @@
 }
 
 .search {
-  width: 60%;
-  min-width: min(25ch, 100%);
+  max-width: min(35ch, 80%);
   margin-inline: auto;
   margin-top: 0.5rem;
 }
@@ -95,7 +94,7 @@
 
 .recipes-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
   margin-top: 1.5rem;
 }
