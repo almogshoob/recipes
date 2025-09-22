@@ -216,10 +216,6 @@
     --fs-md: 21px;
     --fs-sm: 16px;
   }
-  .recipes-grid {
-    /* TODO maybe 2 columns */
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (hover: hover) {
